@@ -1,0 +1,16 @@
+<% if @article.errors.any? %>
+	<h1>Article Errors </h1>
+	<ul>
+		<%= @article.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	<ul>
+<% end %>
+
+<%= form_for @article do |f| %>
+	<p>title<%= f.text_field :title %></p>
+	<p>description<%= f.text_area :description %></p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

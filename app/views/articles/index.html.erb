@@ -1,7 +1,17 @@
 <h1>his is an index page </h1>
-<% @articles.each do |article| %>
-<h3>Title</h3>
-	<%= article.title %><br>
-	<h3>description</h3>
-	<%= article.description %>
-<% end %>
+<table  border=1px>
+	<tr>
+		<th>Title</th>
+		<th>Desription</th>
+		<th>Actions</th>
+	</tr>
+
+	<% @articles.each do |article| %>
+		<tr>
+			<td><%= article.title %></td>
+			<td><%= article.description %></td>
+			<td><%= link_to 'show', article_path(article) %>|
+			<%=  link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+		</tr>
+	<% end %>
+</table>
