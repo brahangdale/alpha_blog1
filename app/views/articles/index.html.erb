@@ -1,0 +1,7 @@
+<h1>his is an index page </h1>
+<% @articles.each do |article| %>
+<h3>Title</h3>
+	<%= article.title %><br>
+	<h3>description</h3>
+	<%= article.description %>
+<% end %>
